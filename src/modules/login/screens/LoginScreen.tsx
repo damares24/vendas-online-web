@@ -12,7 +12,7 @@ import {
   TitleLogin,
 } from '../styles/loginScreen.styles';
 
-const LoginSCreen = () => {
+const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -68,4 +68,4 @@ const LoginSCreen = () => {
   );
 };
 
-export default LoginSCreen;
+export default LoginScreen;
