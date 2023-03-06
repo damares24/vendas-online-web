@@ -1,7 +1,7 @@
 import { AUTHORIZATION_KEY } from '../../constants/authorizationConstants';
 import { getItemStorage, removeItemStorage, setItemStorage } from './storageProxy';
 
-export const unseAuthorizationToken = () => removeItemStorage(AUTHORIZATION_KEY);
+export const unsetAuthorizationToken = () => removeItemStorage(AUTHORIZATION_KEY);
 
 export const setAuthorizationToken = (token: string) => {
   if (token) {
