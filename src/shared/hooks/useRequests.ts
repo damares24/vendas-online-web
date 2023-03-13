@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { AuthType } from '../../modules/login/screens/types/AuthType';
-import { ProductRoutesEnum } from '../../modules/product/routes';
 import { ERROR_INVALID_PASSWORD } from '../constants/errosStatus';
 import { URL_AUTH } from '../constants/urls';
 import { setAuthorizationToken } from '../functions/connection/auth';
@@ -43,7 +41,6 @@ export const useRequests = () => {
   };
 
   const authRequest = async (body: unknown): Promise<void> => {
-    const navigate = useNavigate();
     setLoading(true);
 
     await connectionAPIPost<AuthType>(URL_AUTH, body)
@@ -51,7 +48,7 @@ export const useRequests = () => {
         setUser(result.user);
         setNotification('Entrando....', 'success');
         setAuthorizationToken(result.accessToken);
-        navigate(ProductRoutesEnum.PRODUCT);
+        location.href = '/';
 
         return result;
       })
